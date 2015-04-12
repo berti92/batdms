@@ -65,7 +65,7 @@
           </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://bitbucket.org/berti92/batdms/wiki/Home"><?php l('Navbar.help') ?></a></li>
+          <li><a target="_blank" href="https://github.com/berti92/batdms/wiki"><?php l('Navbar.help') ?></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php l('Navbar.me') ?> <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
