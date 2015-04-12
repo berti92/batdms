@@ -16,7 +16,7 @@
     }
     if($password == $confirm_password) {
       mysql_query('INSERT INTO users(username, password, email, birthday, first_name, last_name, force_password_change) VALUES("'.$username.'",md5("'.$password.'"),"'.$email.'","'.$birthday.'","'.$first_name.'","'.$last_name.'", '.$force_password_change.')');
-      mysql_query('INSERT INTO user_settings(user_id, setting_key, setting_value) VALUES('.mysql_insert_id().',"language_id",(SELECT id FROM languages WHERE language_name = "English"))')
+      mysql_query('INSERT INTO user_settings(user_id, setting_key, setting_value) VALUES('.mysql_insert_id().',"language_id",(SELECT id FROM languages WHERE language_name = "English"))');
       header('Location: users.php');
     }
   }

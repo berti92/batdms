@@ -136,4 +136,29 @@
     }
     return $ret;
   }
+  function get_list($query,$countquery,$page,$columns,$order,$limit,$openlink) {
+    $count = mysql_fetch_assoc(mysql_query($countquery))["count"];
+    $offset = $limit * ($page - 1);
+    $order = 'ORDER BY '.$order;
+    $query_page = $query.' '.$order.' LIMIT '.$limit.' OFFSET '.$offset or error_log('ERROR: '.$query.' '.$order.' LIMIT '.$limit.' OFFSET '.$offset);
+    $result = mysql_query($query_page);
+    $res_ar = Array();
+    $res_ar["recordsTotal"] = $count;
+    $res_ar["recordsFiltered"] = $count;
+    $data_ar = Array();
+    while($row = mysql_fetch_array($result)) {
+      $data = Array();
+      foreach($columns as $column) {
+        if (is_bool($row[$column]) || $column == 'force_password_change') {
+          $data[$column] = bool_to_text($row[$column]);
+        } else {
+          $data[$column] = $row[$column];
+        }
+      }
+      $data['action'] = str_replace("##ID##",$row['id'], $openlink);
+      array_push($data_ar, $data);
+    }
+    $res_ar["data"] = $data_ar;
+    return $res_ar;
+  }
 ?>

@@ -42,17 +42,17 @@
         <label for="document_type_id"><?php l('Document.document_type_id'); ?></label><br/>
         <?php echo(document_type_select('document_type_id')); ?><br/><br/>
         <label for="document_date"><?php l('Document.document_date'); ?></label>
-        <div class="input-group date"><input type="text" name="document_date" placeholder="Date" class="form-control" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span></div><br/>
+        <div class="input-group date"><input type="text" name="document_date" placeholder="<?php l('Document.document_date'); ?>" class="form-control" required><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span></div><br/>
         <label for="document_name"><?php l('Document.document_name'); ?></label>
-        <input type="text" name="document_name" class="form-control" placeholder="Document name" aria-describedby="sizing-addon2" required><br/>
+        <input type="text" name="document_name" class="form-control" placeholder="<?php l('Document.document_name'); ?>" aria-describedby="sizing-addon2" required><br/>
         <label for="relation"><?php l('Document.relation'); ?></label>
-        <input type="text" name="relation" class="form-control" placeholder="relation" aria-describedby="sizing-addon2"><br/>
+        <input type="text" name="relation" class="form-control" placeholder="<?php l('Document.relation'); ?>" aria-describedby="sizing-addon2"><br/>
         <label for="account_id"><?php l('Document.account_id'); ?></label><br/>
         <?php echo(account_select('account_id')); ?><br/><br/>
         <label for="retention_period_id"><?php l('Document.retention_period_id'); ?></label><br/>
         <?php echo(retention_period_select('retention_period_id')); ?><br/><br/>
         <label for="comment"><?php l('Document.comment'); ?></label>
-        <textarea name="comment" class="form-control" placeholder="Comment" aria-describedby="sizing-addon2"></textarea><br/>
+        <textarea name="comment" class="form-control" placeholder="<?php l('Document.comment'); ?>" aria-describedby="sizing-addon2"></textarea><br/>
         <label for="uploads"><?php l('UploadPanel.uploads'); ?></label>
         <input name="uploads[]" type="file" multiple="multiple"><br/>
         <input type="submit" name="submit" class="btn btn-default" value="<?php l('App.save'); ?>"/>

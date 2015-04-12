@@ -32,21 +32,21 @@
         <label for="account_type_id"><?php l('Account.account_type_id'); ?></label><br/>
         <?php echo(account_type_select('account_type_id')); ?><br/>
         <label for="account_name"><?php l('Account.account_name'); ?></label>
-        <input type="text" name="account_name" class="form-control" placeholder="Account name" aria-describedby="sizing-addon2" required>
+        <input type="text" name="account_name" class="form-control" placeholder="<?php l('Account.account_name'); ?>" aria-describedby="sizing-addon2" required>
         <label for="relation"><?php l('Account.relation'); ?></label>
-        <input type="text" name="relation" class="form-control" placeholder="Account name" aria-describedby="sizing-addon2">
+        <input type="text" name="relation" class="form-control" placeholder="<?php l('Account.relation'); ?>" aria-describedby="sizing-addon2">
         <label for="account_ext"><?php l('Account.account_ext'); ?></label>
-        <input type="text" name="account_ext" class="form-control" placeholder="Account ext" aria-describedby="sizing-addon2">
+        <input type="text" name="account_ext" class="form-control" placeholder="<?php l('Account.account_ext'); ?>" aria-describedby="sizing-addon2">
         <label for="street_name"><?php l('Account.street_name'); ?></label>
-        <input type="text" name="street_name" class="form-control" placeholder="Street" aria-describedby="sizing-addon2">
+        <input type="text" name="street_name" class="form-control" placeholder="<?php l('Account.street_name'); ?>" aria-describedby="sizing-addon2">
         <label for="street_ext"><?php l('Account.street_ext'); ?></label>
-        <input type="text" name="street_ext" class="form-control" placeholder="Street ext" aria-describedby="sizing-addon2">
+        <input type="text" name="street_ext" class="form-control" placeholder="<?php l('Account.street_ext'); ?>" aria-describedby="sizing-addon2">
         <label for="house_no"><?php l('Account.house_no'); ?></label>
-        <input type="text" name="house_no" class="form-control" placeholder="House no" aria-describedby="sizing-addon2">
+        <input type="text" name="house_no" class="form-control" placeholder="<?php l('Account.house_no'); ?>" aria-describedby="sizing-addon2">
         <label for="zip"><?php l('Account.zip'); ?></label>
-        <input type="text" name="zip" class="form-control" placeholder="ZIP" aria-describedby="sizing-addon2">
+        <input type="text" name="zip" class="form-control" placeholder="<?php l('Account.zip'); ?>" aria-describedby="sizing-addon2">
         <label for="city_name"><?php l('Account.city_name'); ?></label>
-        <input type="text" name="city_name" class="form-control" placeholder="City" aria-describedby="sizing-addon2">
+        <input type="text" name="city_name" class="form-control" placeholder="<?php l('Account.city_name'); ?>" aria-describedby="sizing-addon2">
         <label for="country_id"><?php l('Account.country_id'); ?></label><br/>
         <?php echo(country_select('country_id')); ?><br/><br/>
         <input type="submit" name="submit" class="btn btn-default" value="<?php l('App.save'); ?>"/>

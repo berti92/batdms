@@ -1,33 +1,20 @@
 <?php
   include_once 'includes/database.php';
   include_once 'includes/functions.php';
-  $table_id = $_GET['tid'];
-  $page = $_GET['page'];
-  $result = mysql_query('SELECT * FROM users');
+  $start = mysql_escape_string($_GET['start']);
+  if ($start >= 10) {
+    $page = ($start / 10) + 1;
+  } else {
+    $page = 1;
+  }
+  $limit = mysql_escape_string($_GET['length']);
+  $order = mysql_escape_string($_GET['columns'][$_GET['order'][0]['column']]['data'].' '.$_GET['order'][0]['dir']);
+  $res_ar = get_list('SELECT users.id AS id, users.username AS username, users.email AS email, users.birthday AS birthday, users.first_name AS first_name, users.last_name AS last_name, users.force_password_change AS force_password_change FROM users',
+    'SELECT count(*) AS count FROM users',
+    $page,
+    ["id","username","email","birthday","first_name","last_name","force_password_change"],
+    $order,
+    $limit,
+    '<a href="user_show.php?id=##ID##" class="btn btn-primary glyphicon glyphicon-search"></a>');
+  echo(json_encode($res_ar));
 ?>
-<table id="<?php echo($table_id); ?>" class="display">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th><?php l('User.username'); ?></th>
-            <th><?php l('User.email'); ?></th>
-            <th><?php l('User.birthday'); ?></th>
-            <th><?php l('User.first_name'); ?></th>
-            <th><?php l('User.last_name'); ?></th>
-            <th><?php l('User.force_password_change'); ?></th>
-        </tr>
-    </thead>
-    <tbody>
-      <?php while($row = mysql_fetch_array($result)) { ?>
-        <tr>
-            <td><?php echo($row['id']); ?></td>
-            <td><?php echo($row['username']); ?></td>
-            <td><?php echo($row['email']); ?></td>
-            <td><?php echo($row['birthday']); ?></td>
-            <td><?php echo($row['first_name']); ?></td>
-            <td><?php echo($row['last_name']); ?></td>
-            <td><?php echo(bool_to_text($row['force_password_change'])); ?></td>
-        </tr>
-      <?php } ?>
-    </tbody>
-</table>
