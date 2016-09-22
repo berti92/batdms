@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aadb9fab92074e4f85f7862da26f4d2d)](https://www.codacy.com/app/simplyanamedude/batdms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=berti92/batdms&amp;utm_campaign=Badge_Grade)
+
 # BatDMS - very alpha
 
 BatDMS is a web based DMS (document management system), where you can store your documents.
