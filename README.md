@@ -2,7 +2,9 @@
 
 # BatDMS - very alpha
 
-BatDMS is a web based DMS (document management system), where you can store your documents.
+BatDMS is a web based DMS (document management system), where you can store your documents.  
+
+**This project is closed, because it was replaced with <a href="https://one-folder.com/">https://one-folder.com/</a> - only available in german.**
 
 ## Installation
 
